@@ -3,7 +3,7 @@
   "scripts": {
     "build": "esbuild main.js --bundle > build.js",
     "serve": "serve ./",
-    "start": "serve ./"
+    "start": "node main.js"
   },
   "dependencies": {
     "esbuild": "^0.17.5",

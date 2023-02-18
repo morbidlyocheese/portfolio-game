@@ -2688,7 +2688,6 @@ vec4 frag(vec3 pos, vec2 uv, vec4 color, sampler2D tex) {
   }, "default");
 
   // main.js
-  ao();
   ao({
     width: 320,
     heigth: 240,
@@ -2696,7 +2695,7 @@ vec4 frag(vec3 pos, vec2 uv, vec4 color, sampler2D tex) {
     background: [0, 0, 255]
   });
   add([
-    text("yello"),
+    text("yelloooo"),
     pos(120, 80)
   ]);
 })();

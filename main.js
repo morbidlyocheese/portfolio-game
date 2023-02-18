@@ -8,6 +8,6 @@ kaboom({
 });
 
 add([
-    text('yello'),
+    text('yelloooo'),
     pos(120, 80)
 ]);
