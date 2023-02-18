@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "esbuild main.js --bundle > build.js",
+    "serve": "serve ./",
+    "start": "serve ./"
+  },
+  "dependencies": {
+    "esbuild": "^0.17.5",
+    "kaboom": "^2000.2.10",
+    "serve": "^14.2.0"
+  },
+  "name": "portfolio-game",
+  "version": "1.0.0",
+  "description": "game for portfolio",
+  "main": "build.js",
+  "author": "damien jacobson",
+  "license": "ISC"
+}
