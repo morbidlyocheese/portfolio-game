@@ -1,3 +1,5 @@
+[portfolio game](https://djangothesolarboy.github.io/portfolio-game/index.html)
+
 tools/technologies used
 ---
 
@@ -15,4 +17,4 @@ instructions
 1. clone repo
 2. unzip repo
 3. run `npm i` to install the dependencies
-4. open `main.html` in your browser
+4. open `index.html` in your browser

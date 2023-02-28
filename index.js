@@ -37,18 +37,13 @@ const js = add([
     "mobile",
     "wraps",
     {
-        turn_speed: 4.58,
         speed: 320,
-        max_thrust: 48,
-        acceleration: 2,
-        deceleration: 4,
         lives: 3,
         can_shoot: true,
         special_cooldown: 0.5,
         invulnerable: false,
         invulnerablity_time: 3,
         animation_frame: 0,
-        thrusting: false,
     },
 ]);
 
