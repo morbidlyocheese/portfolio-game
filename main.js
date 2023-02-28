@@ -38,7 +38,7 @@ const js = add([
     "wraps",
     {
         turn_speed: 4.58,
-        speed: 0,
+        speed: 320,
         max_thrust: 48,
         acceleration: 2,
         deceleration: 4,
@@ -53,8 +53,14 @@ const js = add([
 ]);
 
 onKeyDown("left", () => {
-    js.angle += js.turn_speed;
+    js.move(-js.speed, 0)
 });
 onKeyDown("right", () => {
-    js.angle -= js.turn_speed;
+    js.move(js.speed, 0)
+});
+onKeyDown("up", () => {
+    js.move(0, -js.speed)
+});
+onKeyDown("down", () => {
+    js.move(0, js.speed)
 });
