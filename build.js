@@ -2762,7 +2762,11 @@ vec4 frag(vec3 pos, vec2 uv, vec4 color, sampler2D tex) {
     js.onCollide("obstacle", () => {
       addKaboom(js.pos);
       shake();
-      js.lives--;
+      if (js.lives === 0) {
+        go("main");
+      } else {
+        js.lives--;
+      }
     });
     onKeyDown("left", () => {
       js.move(-js.speed, 0);

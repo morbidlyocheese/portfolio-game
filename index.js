@@ -81,7 +81,11 @@ scene("main", () => {
     js.onCollide('obstacle', () => {
         addKaboom(js.pos);
         shake();
-        js.lives--;
+        if (js.lives === 0) {
+            go('main');
+        } else {
+            js.lives--;
+        }
     });
     
     onKeyDown("left", () => {
