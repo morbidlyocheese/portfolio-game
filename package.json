@@ -1,9 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "build": "esbuild main.js --bundle > build.js",
+    "build": "esbuild index.js --bundle > build.js",
     "serve": "serve ./",
-    "start": "node main.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "esbuild": "^0.17.5",
