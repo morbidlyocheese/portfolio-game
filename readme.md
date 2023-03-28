@@ -1,4 +1,4 @@
-[portfolio game](https://djangothesolarboy.github.io/portfolio-game/index.html)
+[portfolio game](https://portfolio-game.netlify.app/)
 
 controls
 ---
