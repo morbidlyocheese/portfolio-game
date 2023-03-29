@@ -8,6 +8,7 @@ kaboom({
 });
 
 loadSprite("js", "sprites/js.png");
+loadSound('jump', '/sounds/jump-16bit.wav');
 
 scene("main", () => {
     let score = 0;
@@ -89,13 +90,18 @@ scene("main", () => {
     });
     
     onKeyDown("left", () => {
-        js.move(-js.speed, 0)
+        if (js.pos.x >= 0 + js.width) {
+            js.move(-1 * js.speed, 0);
+        }
     });
     onKeyDown("right", () => {
-        js.move(js.speed, 0)
+        if (js.pos.x <= width() - js.width) {
+            js.move(js.speed, 0);
+        }
     });
     onKeyDown("space", () => {
         if (js.isGrounded()) {
+            play('jump');
             js.jump();
         }
     });
@@ -103,11 +109,22 @@ scene("main", () => {
     onKeyDown('escape', () => {
         go('main');
     });
-
+    
     onUpdate(() => {
         score++;
-
     });
+    js.onUpdate(() => {
+        let currCam = camPos();
+        if (currCam.x < js.pos.x) {
+            camPos(js.pos.x, currCam.y);
+        }
+        if (js.pos.x < 0) {
+            js.pos.x = 0;
+        }
+        if (js.pos.x + js.width > width) {
+            js.pos.x = width() - js.width;
+        }
+    })
 });
 
 go('main');

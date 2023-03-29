@@ -2695,6 +2695,7 @@ vec4 frag(vec3 pos, vec2 uv, vec4 color, sampler2D tex) {
     background: [0, 0, 255]
   });
   loadSprite("js", "sprites/js.png");
+  loadSound("jump", "/sounds/jump-16bit.wav");
   scene("main", () => {
     let score = 0;
     gravity(2400);
@@ -2769,13 +2770,18 @@ vec4 frag(vec3 pos, vec2 uv, vec4 color, sampler2D tex) {
       }
     });
     onKeyDown("left", () => {
-      js.move(-js.speed, 0);
+      if (js.pos.x >= 0 + js.width) {
+        js.move(-1 * js.speed, 0);
+      }
     });
     onKeyDown("right", () => {
-      js.move(js.speed, 0);
+      if (js.pos.x <= width() - js.width) {
+        js.move(js.speed, 0);
+      }
     });
     onKeyDown("space", () => {
       if (js.isGrounded()) {
+        play("jump");
         js.jump();
       }
     });
@@ -2784,6 +2790,18 @@ vec4 frag(vec3 pos, vec2 uv, vec4 color, sampler2D tex) {
     });
     onUpdate(() => {
       score++;
+    });
+    js.onUpdate(() => {
+      let currCam = camPos();
+      if (currCam.x < js.pos.x) {
+        camPos(js.pos.x, currCam.y);
+      }
+      if (js.pos.x < 0) {
+        js.pos.x = 0;
+      }
+      if (js.pos.x + js.width > width) {
+        js.pos.x = width() - js.width;
+      }
     });
   });
   go("main");

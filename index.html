@@ -9,9 +9,19 @@
     <!--  -->
 </head>
 <body>
+    <button id="openModal">open</button>
     <div class="game">
         <script src="https://kaboomjs.com/lib/0.5.0/kaboom.js"></script>
         <script src="build.js"></script>
     </div>
+    <dialog id="myModal">
+        <p class="modalText">controls: 
+            arrows: movement
+            space: jump
+            restart: escape
+        </p>
+        <button id="closeModal">Close Modal</button>
+    </dialog>
+    <script src="modal.js"></script>
 </body>
 </html>
